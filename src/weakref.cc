@@ -35,10 +35,10 @@ public:
 };
 
 
-Persistent<ObjectTemplate> proxyClass;
+Nan::Persistent<ObjectTemplate> proxyClass;
 
-NanCallback *globalCallback;
-
+Nan::Callback *globalCallback;
+Nan::HandleScope scope;
 
 bool IsDead(Handle<Object> proxy) {
   assert(proxy->InternalFieldCount() == 1);
